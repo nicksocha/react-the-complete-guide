@@ -1,12 +1,12 @@
-/* .Person {
-  border: 2px solid #e3e3e3;
+.Person {
   border-radius: 1.5vw;
+  border: 2px solid #e3e3e3;
   box-shadow: 0 3px 5px #ffc600;
   font-family: "Fira Code";
   margin: 2vh auto;
-  padding: 1rem;
   max-width: 60vw;
-} */
+  padding: 1rem;
+}
 
 input {
   background-color: #e3e3e3;

@@ -1,31 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import './App.css';
+import classes from './App.module.css';
 import Person from './Person/Person';
-
-const StyledButton = styled.button`
-  background: ${props =>
-    props.alt
-      ? 'linear-gradient(to bottom, #adebad 5%, #999999 100%)'
-      : 'linear-gradient(to bottom, #999999 5%, #ff99c2 100%)'};
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0px 3px 5px 0px #ffc600;
-  color: #000;
-  cursor: pointer;
-  display: inline-block;
-  font-family: BioRhyme;
-  font-size: 1.5vw;
-  outline: none;
-  padding: 7px 25px;
-  text-decoration: none;
-  &:hover {
-    background: ${props =>
-      props.alt
-        ? 'linear-gradient(to bottom, #84e184 5%, #999999 100%)'
-        : 'linear-gradient(to bottom, #999999 5%, #ff66a3 100%)'};
-  }
-`;
 
 class App extends Component {
   state = {
@@ -60,6 +35,7 @@ class App extends Component {
 
   render() {
     let persons = null;
+    let btnClass = '';
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -74,24 +50,24 @@ class App extends Component {
           ))}
         </div>
       );
+      btnClass = classes.Red;
     }
-    const classes = [];
+    const assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>WOW!!! This is React!!!</h1>
-        <p className={classes.join(' ')}>It is really working! Kinda...</p>
-        <StyledButton
-          alt={this.state.showPersons}
-          onClick={this.togglePersonsHandler}
-        >
+        <p className={assignedClasses.join(' ')}>
+          It is really working! Kinda...
+        </p>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>
           Toggle Persons
-        </StyledButton>
+        </button>
         <p>Maybe...</p>
         {persons}
       </div>
