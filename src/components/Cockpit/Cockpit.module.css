@@ -1,15 +1,4 @@
-.App {
-  color: #ffc600;
-  font-size: 2vw;
-  text-align: center;
-}
-
-body {
-  background-color: #193549;
-  font-family: "BioRhyme";
-}
-
-.App button {
+.Cockpit button {
   background: linear-gradient(to bottom, #adebad 5%, #999999 100%);
   border-radius: 15px;
   border: none;
@@ -24,15 +13,15 @@ body {
   text-decoration: none;
 }
 
-.App button:hover {
+.Cockpit button:hover {
   background: linear-gradient(to bottom, #84e184 5%, #999999 100%);
 }
 
-.App button.Red {
+.Cockpit button.Red {
   background: linear-gradient(to bottom, #ff99c2 5%, #999999 100%);
 }
 
-.App button.Red:hover {
+.Cockpit button.Red:hover {
   background: linear-gradient(to bottom, #ff66a3 5%, #999999 100%);
 }
 
