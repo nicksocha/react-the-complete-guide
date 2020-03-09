@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.module.css';
 
 const cockpit = props => {
+  useEffect(() => {
+    console.log('[Cockpit.js] useEffect');
+    setTimeout(() => {
+      console.log('Saved data to cloud!');
+    }, 1000);
+    return () => {
+      console.log('[Cockpit.js] cleanup work in useEffect');
+    };
+  }, []);
+  useEffect(() => {
+    console.log('[Cockpit.js] 2nd useEffect');
+    return () => {
+      console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+    };
+  });
   const assignedClasses = [];
   let btnClass = '';
   if (props.showPersons) {
@@ -15,7 +30,7 @@ const cockpit = props => {
   }
   return (
     <div className={classes.Cockpit}>
-      <h1>WOW!!! This is React!!!</h1>
+      <h1>{props.title}</h1>
       <p className={assignedClasses.join(' ')}>
         It is really working! Kinda...
       </p>
